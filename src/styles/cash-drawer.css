@@ -1,0 +1,75 @@
+.cash-drawer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.drawer-status-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.status-light {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.status-light.connected {
+  background-color: #28a745;
+  box-shadow: 0 0 8px #28a745;
+}
+
+.status-light.disconnected {
+  background-color: #dc3545;
+  box-shadow: 0 0 8px #dc3545;
+}
+
+.drawer-visualization {
+  width: 300px;
+  height: 120px;
+  border: 2px solid #343a40;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.drawer-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: transform 0.5s;
+}
+
+.drawer-image.open {
+  background-color: #28a745;
+  color: white;
+  transform: translateY(30%);
+}
+
+.drawer-image.closed {
+  background-color: #6c757d;
+  color: white;
+}
+
+.drawer-actions {
+  margin-bottom: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
