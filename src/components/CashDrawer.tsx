@@ -1,3 +1,37 @@
+declare global {
+  interface SerialPort {
+    open(options: SerialOptions): Promise<void>;
+    close(): Promise<void>;
+    readable: ReadableStream;
+    writable: WritableStream;
+  }
+
+  interface SerialOptions {
+    baudRate: number;
+    dataBits?: number;
+    stopBits?: number;
+    parity?: string;
+    bufferSize?: number;
+    flowControl?: string;
+  }
+
+  interface SerialPortRequestOptions {
+    filters?: SerialPortFilter[];
+  }
+
+  interface SerialPortFilter {
+    usbVendorId?: number;
+    usbProductId?: number;
+  }
+
+  interface Navigator {
+    serial: {
+      requestPort(options?: SerialPortRequestOptions): Promise<SerialPort>;
+      getPorts(): Promise<SerialPort[]>;
+    };
+  }
+}
+
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/cash-drawer.css";
